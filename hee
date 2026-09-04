@@ -80,3 +80,7 @@ HR2346:Bus
 Enter the travel mode to find booking numbers
 flight
 No bookings were found for flight
+cannot find symbol
+bookingList=ticketBooking.findBookingByTravelMode(String)
+
+
