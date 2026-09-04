@@ -80,6 +80,81 @@ HR2346:Bus
 Enter the travel mode to find booking numbers
 flight
 No bookings were found for flight
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        TicketBooking tb = new TicketBooking();
+
+        System.out.println("Enter the number of bookings to be added");
+        int n = Integer.parseInt(sc.nextLine().trim());
+
+        System.out.println("Enter the booking details (Booking Number: Travel Mode)");
+        for (int i = 0; i < n; i++) {
+            String line = sc.nextLine().trim();
+            if (line.isEmpty()) {
+                i--;
+                continue;
+            }
+            String[] parts = line.split(":", 2);
+            if (parts.length == 2) {
+                String bookingNumber = parts[0].trim();
+                String travelMode = parts[1].trim();
+                tb.addTicketBookingDetails(bookingNumber, travelMode);
+            }
+        }
+
+        System.out.println("Enter the travel mode to find booking numbers");
+        String searchMode = sc.nextLine().trim();
+
+        List<String> result = tb.findBookingNumbersByTravelMode(searchMode);
+
+        if (result.isEmpty()) {
+            System.out.println("No bookings were found for " + searchMode);
+        } else {
+            System.out.println("Booking numbers based on " + searchMode + " are");
+            for (String b : result) {
+                System.out.println(b);
+            }
+        }
+
+        sc.close();
+    }
+}
+
+class TicketBooking {
+    private Map<String, String> bookingMap;
+
+    public TicketBooking() {
+        this.bookingMap = new HashMap<>();
+    }
+
+    // Requirement 1: add bookingNumber -> travelMode to the map
+    public void addTicketBookingDetails(String bookingNumber, String travelMode) {
+        if (bookingNumber != null && travelMode != null) {
+            bookingMap.put(bookingNumber, travelMode);
+        }
+    }
+
+    // Requirement 2: return list of booking numbers for the given travel mode (case-insensitive)
+    public List<String> findBookingNumbersByTravelMode(String travelMode) {
+        List<String> bookings = new ArrayList<>();
+        if (travelMode == null) {
+            return bookings;
+        }
+        for (Map.Entry<String, String> entry : bookingMap.entrySet()) {
+            if (entry.getValue() != null && entry.getValue().equalsIgnoreCase(travelMode)) {
+                bookings.add(entry.getKey());
+            }
+        }
+        return bookings;
+    }
+}
+
+in output:
 cannot find symbol
 bookingList=ticketBooking.findBookingByTravelMode(String)
 
