@@ -1,35 +1,82 @@
-Charles arranged games for the gathering. The qualification rules for each game are very diverse. Each game contains n rounds. If a player's highest point exceeds the total of all other points, he or she qualifies for the next round. If the player's highest point is less than or equal to the total of all other points, he or she does not qualify for the next round. Write a Java application to assist Charles in determining if the individual is eligible for the next game.For example, if a player plays a game that has 4 rounds with points 4, 3, 2, and 10, then, the player qualifies for the next round because 10 > 9 (4 + 3 + 2).Constraints:If the value of the rounds
-is less than or equal to zero, print "Rounds cannot be <value>". If the player is qualified, print "Congratulations you have qualified with a maximum point <maximumPoint>". If the player is not qualified, print "Sorry you
-are not qualified".Assume that points are positive and greater than zero.Note:Do not edit the existing code template.In the Sample Input / Output provided, the highlighted text in bold corresponds to the input given by the user, and the rest of the text represents the output.Implement the business requirements within the main method. Please do not change the class name.Please do not use System.exit(0); to terminate the program.
+
+HR Travels, a
+reputable travel agency situated in Delhi, has recognised the need to
+streamline the management and monitoring of booking numbers related to various
+modes of travel. The agency's manager approaches a software developer to help
+in their process. You, being the software developer, develop a Java program
+based on the requirements.
+
+Functional Requirements
+
+    
+        
+            Req.#
+            Requirement Description
+             Type (Class Name)Method Name 
+            Parameters 
+            Description 
+        
+    
+    
+        
+            1.
+            Add the booking number and its travel mode to the map.
+             TicketBooking addTicketBookingDetails
+            String bookingNumber, String travelMode
+            This method should add the bookingNumber and travelMode into the booking map, which is implemented as a hash map.Note: bookingMap takes  bookingNumber as key and travelMode as value.Constraints:bookingNumber is case-sensitive.
+                
+                
+                
+                
+            
+        
+        
+            2.
+            Filter the booking number based on the travel mode.
+                
+            
+             TicketBooking findBookingNumbersByTravelMode 
+            
+            String travelMode
+            
+                
+                This method accepts travelMode as the parameter and filter the booking numbers for the specified travel mode.
+                Constraints:  
+                
+                
+                    travelMode is case-insensitive.It should return a list of booking numbers.
+                
+                
+                
+            
+        
+    
+
+You are provided with the main method as a code template, and it is excluded from evaluation.
+
+Note:Edit only the TicketBooking class to implement the business requirements.The methods and the constructor should be public, and the attributes of the class should be private.In the Sample Input / Output provided, the highlighted text in bold corresponds to the input given by the user and the rest of the text represents the output.Ensure that the names for classes, attributes, and methods are provided as specified in the question description.Please do not use System.exit(0); to terminate the program.
 
 
-
-Sample Input/Output 1
-
-Enter the rounds
-
-6
-
-Enter the points
-
-36
-
-9
-
-4
-
+Sample Input / Output 1:  
+Enter the number of bookings to be added
 3
+Enter the booking details (Booking Number: Travel Mode)
+HR2345:Bus
+HR7689:Train
+HR5647:Flight
+Enter the travel mode to find booking numbers
+train
+Booking numbers based on train are
+HR7689
+ 
+Sample Input / Output 2:  
+Enter the number of bookings to be added
+3
+Enter the booking details (Booking Number: Travel Mode)
+HR5346:Bus
+HR8435:Train
+HR2346:Bus
 
-5
-
-2
-
-Congratulations you have qualified with a maximum point 36
-
-Sample Input/Output 2
-
-Enter the rounds
-
--4
-
-Rounds cannot be -4Sample Input/Output 3Enter the rounds  5  Enter the points  5  7  3  2  4  Sorry you are not qualified
+Enter the travel mode to find booking numbers
+flight
+No bookings were found for flight
