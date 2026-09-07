@@ -1,9 +1,9 @@
-method split the strings using colon as delimiter
-validateVehicleDetails
-vehicleId - VH/ followed f=by 4 digits
-vehicletype car,bike,bus
-fueltype must be either petrol, diesel or electric
-enginecapacity must be greater than 50 or less than equal to 5000
+rsvp handler - add guest record to rsvp list - method anme: addguestrsvp (string rsvp) 
+add guest list to rsvp list which is implemented in arraylist
+rsvp  contains guestname, status separated by :
 
 
-if all parts of the details pass the valdiation, construct vehicle object
+rsvp handler - filter the confirmed guests from rsvplist
+getConfirmedGuests
+ths method shd iterate , check the quests with "confirmed", and return the names of confirmed in a new list 
+the method shd return list of strings
