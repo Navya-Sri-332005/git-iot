@@ -1,0 +1,9 @@
+method split the strings using colon as delimiter
+validateVehicleDetails
+vehicleId - VH/ followed f=by 4 digits
+vehicletype car,bike,bus
+fueltype must be either petrol, diesel or electric
+enginecapacity must be greater than 50 or less than equal to 5000
+
+
+if all parts of the details pass the valdiation, construct vehicle object
