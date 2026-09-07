@@ -1,0 +1,10 @@
+take sentence as input 
+
+the sun shine 
+eht nus enihs
+
+if words are odd: reverse each word in the sentence
+
+if it6 is even:
+inout: bold shine
+output shine bold (order got changed)
